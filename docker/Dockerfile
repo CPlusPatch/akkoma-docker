@@ -1,6 +1,5 @@
 FROM alpine:3.17.3
 
-#aaaa
 #Setup labels
 ARG BUILD_DATE
 ARG VCS_REF
