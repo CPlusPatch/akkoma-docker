@@ -74,7 +74,7 @@ WORKDIR /home/akkoma
 ARG AKKOMA_GIT_REPO
 RUN \
     echo "#> Getting akkoma sources from $AKKOMA_GIT_REPO..." 1>&2 && \
-    git clone --progress $AKKOMA_GIT_REPO ./akkoma && \
+    git clone --depth=1 --progress $AKKOMA_GIT_REPO ./akkoma && \
     mkdir -p ./akkoma/instance/static/emoji
 
 WORKDIR /home/akkoma/akkoma
