@@ -68,7 +68,7 @@ WORKDIR /home/akkoma
 ARG AKKOMA_GIT_REPO
 RUN \
     echo "#> Getting akkoma sources from $AKKOMA_GIT_REPO..." 1>&2 && \
-    git clone --depth=1 --progress $AKKOMA_GIT_REPO ./akkoma && \
+    git clone --depth=1 -b stable --progress $AKKOMA_GIT_REPO ./akkoma && \
     mkdir -p ./akkoma/instance/static/emoji
 
 WORKDIR /home/akkoma/akkoma
@@ -81,13 +81,13 @@ ENV __CACHE_TAG $__CACHE_TAG
 
 # Fetch changes, checkout
 # Only pull if the version-string happens to be a branch
-ARG AKKOMA_VERSION
-RUN \
-    git fetch --all && \
-    git checkout $AKKOMA_VERSION && \
-    if git show-ref --quiet "refs/heads/$AKKOMA_VERSION"; then \
-        git pull --rebase --autostash; \
-    fi
+#ARG AKKOMA_VERSION
+#RUN \
+#    git fetch --all && \
+#    git checkout $AKKOMA_VERSION && \
+#    if git show-ref --quiet "refs/heads/$AKKOMA_VERSION"; then \
+#        git pull --rebase --autostash; \
+#    fi
 
 # Precompile
 RUN \
