@@ -1,11 +1,5 @@
 FROM alpine:3.17.3
 
-ARG __VIA_SCRIPT
-RUN \
-    if [ -z "$__VIA_SCRIPT" ]; then \
-        echo -e "\n\nERROR\nYou must build pleroma via build.sh\n\n"; \
-        exit 1; \
-    fi
 #aaaa
 #Setup labels
 ARG BUILD_DATE
