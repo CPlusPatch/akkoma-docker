@@ -6,7 +6,7 @@ RUN \
         echo -e "\n\nERROR\nYou must build pleroma via build.sh\n\n"; \
         exit 1; \
     fi
-
+#aaaa
 #Setup labels
 ARG BUILD_DATE
 ARG VCS_REF
