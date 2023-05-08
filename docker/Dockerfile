@@ -7,6 +7,7 @@ RUN \
         exit 1; \
     fi
 
+# force rebuild
 #Setup labels
 ARG BUILD_DATE
 ARG VCS_REF
