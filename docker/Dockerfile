@@ -4,6 +4,8 @@ FROM alpine:3.17.3
 ARG BUILD_DATE
 ARG VCS_REF
 
+# Test
+
 LABEL maintainer="mel@hyena.network" \
     org.opencontainers.image.title="Akkoma" \
     org.opencontainers.image.description="Akkoma containerized" \
